@@ -90,6 +90,15 @@ h1,h2,h3,h4 {
 }
 img { background: var(--line); }
 
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(250,248,245,.97) 0%, rgba(250,248,245,.85) 55%, rgba(250,248,245,.3) 80%, transparent 100%);
+}
+@media (min-width: 640px) {
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(250,248,245,.93) 0%, rgba(250,248,245,.7) 35%, rgba(250,248,245,.15) 55%, transparent 65%);
+  }
+}
+
 /* ═══════════════════════════════════════
    ANIMATIONS
    ═══════════════════════════════════════ */
@@ -148,8 +157,24 @@ img { background: var(--line); }
 }
 @media (prefers-color-scheme:dark) {
   :root:not([data-theme="light"]) .site-nav { background: rgba(17,17,16,.85); }
+  :root:not([data-theme="light"]) .hero-overlay {
+    background: linear-gradient(180deg, rgba(17,17,16,.97) 0%, rgba(17,17,16,.85) 55%, rgba(17,17,16,.3) 80%, transparent 100%);
+  }
+}
+@media (prefers-color-scheme:dark) and (min-width:640px) {
+  :root:not([data-theme="light"]) .hero-overlay {
+    background: linear-gradient(90deg, rgba(17,17,16,.93) 0%, rgba(17,17,16,.7) 35%, rgba(17,17,16,.15) 55%, transparent 65%);
+  }
 }
 :root[data-theme="dark"] .site-nav { background: rgba(17,17,16,.85); }
+:root[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(180deg, rgba(17,17,16,.97) 0%, rgba(17,17,16,.85) 55%, rgba(17,17,16,.3) 80%, transparent 100%);
+}
+@media (min-width:640px) {
+  :root[data-theme="dark"] .hero-overlay {
+    background: linear-gradient(90deg, rgba(17,17,16,.93) 0%, rgba(17,17,16,.7) 35%, rgba(17,17,16,.15) 55%, transparent 65%);
+  }
+}
 
 /* ── Buttons ── */
 .btn {
@@ -308,7 +333,7 @@ img { background: var(--line); }
   <div class="absolute inset-0 overflow-hidden">
     <img id="heroBg" src="images/banner.png"
          alt="Lavinia Çiçekçilik — taze çiçek aranjmanları" class="w-full h-full object-cover will-change-transform" style="transform:scale(1.08); object-position:center center;" fetchpriority="high">
-    <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(250,248,245,.93) 0%,rgba(250,248,245,.7) 35%,rgba(250,248,245,.15) 55%,transparent 65%);"></div>
+    <div class="hero-overlay absolute inset-0"></div>
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-20 lg:py-32 w-full">
