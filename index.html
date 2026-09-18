@@ -293,12 +293,12 @@ img { background: var(--line); }
 .mobile-menu-overlay.open { opacity:1; visibility:visible; }
 
 .mobile-menu-panel {
-  position:fixed; top:0; right:0; bottom:0; z-index:210;
+  position:fixed; top:0; left:0; bottom:0; z-index:210;
   width:min(85vw, 380px);
   background:var(--cream);
-  border-left:1px solid var(--line);
-  box-shadow:-8px 0 40px rgba(0,0,0,.12);
-  transform:translateX(100%);
+  border-right:1px solid var(--line);
+  box-shadow:8px 0 40px rgba(0,0,0,.12);
+  transform:translateX(-100%);
   transition: transform .5s var(--ease-out-expo);
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
@@ -363,9 +363,6 @@ img { background: var(--line); }
 .hamburger.active .hamburger-line:nth-child(2) { opacity:0; }
 .hamburger.active .hamburger-line:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
 
-@media(min-width:1024px) {
-  .hamburger, .mobile-menu-overlay, .mobile-menu-panel { display:none !important; }
-}
 
 /* ── WhatsApp Float ── */
 .wa-float {
@@ -402,9 +399,14 @@ img { background: var(--line); }
      ═══════════════════════════════════════ -->
 <nav class="site-nav sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-18">
-    <div class="flex items-baseline gap-2.5">
+    <div class="flex items-center gap-3">
+      <button id="menuToggle" aria-label="Menüyü aç" class="hamburger w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-xl transition-colors" style="background:var(--surface); border:1px solid var(--line);">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
       <a href="#" class="font-display text-2xl sm:text-[1.65rem] font-semibold text-gold italic" style="letter-spacing:.02em;">Lavinia</a>
-      <span class="hidden lg:inline text-muted font-body" style="font-size:.65rem; letter-spacing:.1em;">ANTAKYA ÇİÇEKÇİLİK</span>
+      <span class="hidden sm:inline text-muted font-body" style="font-size:.65rem; letter-spacing:.1em;">ANTAKYA ÇİÇEKÇİLİK</span>
     </div>
     <div class="flex items-center gap-3 sm:gap-4">
       <a href="tel:+905418450095" class="hidden sm:flex items-center gap-1.5 text-sm text-dim hover:text-ink transition-colors">
@@ -419,11 +421,6 @@ img { background: var(--line); }
         <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
         Sipariş Ver
       </a>
-      <button id="menuToggle" aria-label="Menüyü aç" class="hamburger lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-xl transition-colors" style="background:var(--surface); border:1px solid var(--line);">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
   </div>
 </nav>
@@ -820,23 +817,7 @@ img { background: var(--line); }
         </div>
       </a>
 
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d2">
-        <img src="images/saksi2.jpeg" alt="Saksı Çiçekleri" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Saksı Çiçekleri</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d3">
-        <img src="images/saksi3.jpeg" alt="Saksı Çiçekleri" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Saksı Çiçekleri</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20%C3%87elenk%20%C3%A7e%C5%9Fitleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d4">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20%C3%87elenk%20%C3%A7e%C5%9Fitleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d2">
         <img src="images/celenk.jpeg" alt="Çelenk" loading="lazy">
         <div class="catalog-overlay">
           <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
@@ -844,7 +825,7 @@ img { background: var(--line); }
         </div>
       </a>
 
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Buket%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d5">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Buket%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d3">
         <img src="images/buket.jpeg" alt="Buket Çiçekler" loading="lazy">
         <div class="catalog-overlay">
           <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
@@ -852,15 +833,7 @@ img { background: var(--line); }
         </div>
       </a>
 
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Buket%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d6">
-        <img src="images/buket2.jpeg" alt="Buket Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Buket Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Canl%C4%B1%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d1">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Canl%C4%B1%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d4">
         <img src="images/canli.jpeg" alt="Canlı Çiçekler" loading="lazy">
         <div class="catalog-overlay">
           <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
@@ -868,32 +841,8 @@ img { background: var(--line); }
         </div>
       </a>
 
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d2">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d5">
         <img src="images/yapay.jpeg" alt="Yapay Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d3">
-        <img src="images/yapay2.jpeg" alt="Yapay Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d4">
-        <img src="images/nisan2.jpeg" alt="Yapay Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20Ni%C5%9Fan%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d5">
-        <img src="images/nisan3.jpeg" alt="Yapay Nişan Çiçekleri" loading="lazy">
         <div class="catalog-overlay">
           <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
           <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
