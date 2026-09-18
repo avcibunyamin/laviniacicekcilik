@@ -282,6 +282,91 @@ img { background: var(--line); }
 .ornament-line { width:3rem; height:1px; background:var(--gold-dim); }
 .ornament-diamond { width:7px; height:7px; background:var(--gold); transform:rotate(45deg); opacity:.65; }
 
+/* ── Mobile Menu ── */
+.mobile-menu-overlay {
+  position:fixed; inset:0; z-index:200;
+  background:rgba(26,25,22,.45);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  opacity:0; visibility:hidden;
+  transition: opacity .4s var(--ease-out-expo), visibility .4s;
+}
+.mobile-menu-overlay.open { opacity:1; visibility:visible; }
+
+.mobile-menu-panel {
+  position:fixed; top:0; right:0; bottom:0; z-index:210;
+  width:min(85vw, 380px);
+  background:var(--cream);
+  border-left:1px solid var(--line);
+  box-shadow:-8px 0 40px rgba(0,0,0,.12);
+  transform:translateX(100%);
+  transition: transform .5s var(--ease-out-expo);
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.mobile-menu-panel.open { transform:translateX(0); }
+
+.menu-item {
+  opacity:0; transform:translateY(16px);
+  transition: opacity .35s var(--ease-out-expo), transform .35s var(--ease-out-expo);
+}
+.mobile-menu-panel.open .menu-item { opacity:1; transform:translateY(0); }
+.mobile-menu-panel.open .menu-item:nth-child(1)  { transition-delay:.08s }
+.mobile-menu-panel.open .menu-item:nth-child(2)  { transition-delay:.12s }
+.mobile-menu-panel.open .menu-item:nth-child(3)  { transition-delay:.16s }
+.mobile-menu-panel.open .menu-item:nth-child(4)  { transition-delay:.20s }
+.mobile-menu-panel.open .menu-item:nth-child(5)  { transition-delay:.24s }
+.mobile-menu-panel.open .menu-item:nth-child(6)  { transition-delay:.28s }
+.mobile-menu-panel.open .menu-item:nth-child(7)  { transition-delay:.32s }
+.mobile-menu-panel.open .menu-item:nth-child(8)  { transition-delay:.36s }
+.mobile-menu-panel.open .menu-item:nth-child(9)  { transition-delay:.40s }
+.mobile-menu-panel.open .menu-item:nth-child(10) { transition-delay:.44s }
+.mobile-menu-panel.open .menu-item:nth-child(11) { transition-delay:.48s }
+.mobile-menu-panel.open .menu-item:nth-child(12) { transition-delay:.52s }
+
+.menu-link {
+  display:flex; align-items:center; gap:.75rem;
+  padding:.875rem 0; color:var(--ink); text-decoration:none;
+  font-family:'Inter',system-ui,sans-serif; font-size:.9375rem; font-weight:500;
+  transition: color .25s, transform .25s;
+}
+.menu-link:hover { color:var(--emerald); transform:translateX(4px); }
+
+.menu-link-sub {
+  padding-left:1.25rem; font-size:.875rem; font-weight:400; color:var(--ink-dim);
+}
+.menu-link-sub:hover { color:var(--emerald); }
+
+.menu-badge {
+  font-size:.625rem; font-weight:700; letter-spacing:.06em;
+  padding:.2rem .5rem; border-radius:6px;
+  background:var(--emerald); color:#fff;
+}
+
+.menu-section-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:.7rem; font-weight:600; letter-spacing:.14em;
+  color:var(--gold); margin-bottom:.25rem;
+  text-transform:uppercase;
+}
+
+.menu-divider {
+  height:1px; background:var(--line); margin:1rem 0;
+}
+
+.hamburger-line {
+  display:block; width:20px; height:1.5px;
+  background:var(--ink); border-radius:1px;
+  transition: transform .35s var(--ease-out-expo), opacity .25s;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+.hamburger.active .hamburger-line:nth-child(2) { opacity:0; }
+.hamburger.active .hamburger-line:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+
+@media(min-width:1024px) {
+  .hamburger, .mobile-menu-overlay, .mobile-menu-panel { display:none !important; }
+}
+
 /* ── WhatsApp Float ── */
 .wa-float {
   position:fixed; bottom:1.5rem; right:1.5rem; z-index:100;
@@ -330,13 +415,124 @@ img { background: var(--line); }
         <svg id="iconSun" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg id="iconMoon" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" hidden><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
       </button>
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm hidden sm:inline-flex">
         <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
         Sipariş Ver
       </a>
+      <button id="menuToggle" aria-label="Menüyü aç" class="hamburger lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-xl transition-colors" style="background:var(--surface); border:1px solid var(--line);">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </div>
 </nav>
+
+
+<!-- ═══════════════════════════════════════
+     MOBILE MENU
+     ═══════════════════════════════════════ -->
+<div id="menuOverlay" class="mobile-menu-overlay"></div>
+<aside id="menuPanel" class="mobile-menu-panel" aria-hidden="true">
+  <div class="px-7 pt-7 pb-10">
+
+    <div class="flex items-center justify-between mb-8">
+      <a href="#" class="font-display text-xl font-semibold text-gold italic">Lavinia</a>
+      <button id="menuClose" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-xl transition-colors" style="background:var(--surface); border:1px solid var(--line); color:var(--ink-dim);">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="menu-item">
+      <p class="menu-section-title">KOLEKSİYONLARIMIZ</p>
+    </div>
+    <div class="menu-divider menu-item"></div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20G%C3%BCl%20Buketleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--sale-red);" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        Gül Buketleri
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Ni%C5%9Fan%20Buketleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--gold);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        Nişan Buketleri
+      </a>
+    </div>
+    <div class="menu-item">
+      <a href="#firsatlar" class="menu-link menu-link-sub" onclick="closeMobileMenu()">
+        41'li Canlı Buket
+        <span class="menu-badge">POPÜLER</span>
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Buket%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        Buket Çiçekler
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h14a2 2 0 012 2v1a7 7 0 01-7 7h-4a7 7 0 01-7-7V9z"/><path stroke-linecap="round" d="M12 17v4m-3 0h6"/></svg>
+        Saksı Çiçekleri
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Gelin%20Buketi%20se%C3%A7enekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--gold);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        Gelin Buketi
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--ink-muted);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l.146.146A2 2 0 0116.138 21H7.862a2 2 0 01-1.544-3.271l.146-.146z"/></svg>
+        Yapay Çiçekler
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Do%C4%9Fal%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        Doğal Çiçekler
+      </a>
+    </div>
+
+    <div class="menu-item" style="margin-top:1.5rem;">
+      <p class="menu-section-title">MÜŞTERİ HİZMETLERİ</p>
+    </div>
+    <div class="menu-divider menu-item"></div>
+
+    <div class="menu-item">
+      <a href="https://maps.app.goo.gl/vFheRinPdk6bFAob7" target="_blank" rel="noopener" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><use href="#i-pin"/></svg>
+        Konum
+        <span class="text-xs font-normal" style="color:var(--ink-muted);">Ekinci, Antakya</span>
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="tel:+905418450095" class="menu-link">
+        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><use href="#i-phone"/></svg>
+        İletişim
+        <span class="text-xs font-normal" style="color:var(--ink-muted);">0541 845 00 95</span>
+      </a>
+    </div>
+
+    <div class="menu-item" style="margin-top:2rem;">
+      <a href="https://wa.me/905418450095?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+        <svg class="w-5 h-5" fill="currentColor"><use href="#i-wa"/></svg>
+        WhatsApp'tan Sipariş Ver
+      </a>
+    </div>
+
+  </div>
+</aside>
 
 
 <!-- ═══════════════════════════════════════
@@ -830,6 +1026,36 @@ img { background: var(--line); }
       try { localStorage.setItem('lavinia-theme', next); } catch(e){}
     });
   }
+
+  /* ── Mobile Menu ── */
+  var menuBtn = document.getElementById('menuToggle');
+  var menuClose = document.getElementById('menuClose');
+  var menuOverlay = document.getElementById('menuOverlay');
+  var menuPanel = document.getElementById('menuPanel');
+
+  function openMobileMenu() {
+    menuBtn.classList.add('active');
+    menuOverlay.classList.add('open');
+    menuPanel.classList.add('open');
+    menuPanel.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    menuBtn.classList.remove('active');
+    menuOverlay.classList.remove('open');
+    menuPanel.classList.remove('open');
+    menuPanel.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  window.closeMobileMenu = closeMobileMenu;
+
+  if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+  if (menuClose) menuClose.addEventListener('click', closeMobileMenu);
+  if (menuOverlay) menuOverlay.addEventListener('click', closeMobileMenu);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menuPanel.classList.contains('open')) closeMobileMenu();
+  });
 
   /* ── Hero Parallax ── */
   if (!mo) {
