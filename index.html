@@ -446,53 +446,44 @@ img { background: var(--line); }
     <div class="menu-divider menu-item"></div>
 
     <div class="menu-item">
-      <a href="#firsatlar" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--sale-red);" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        Canlı Gül Buketleri
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#nisan" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--gold);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-        Nişan Buketleri
-        <span class="menu-badge">POPÜLER</span>
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#buket" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        Buket Çiçekler
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#saksi" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h14a2 2 0 012 2v1a7 7 0 01-7 7h-4a7 7 0 01-7-7V9z"/><path stroke-linecap="round" d="M12 17v4m-3 0h6"/></svg>
-        Saksı Çiçekleri
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#gelin" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--gold);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        Gelin Buketi
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#yapay" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--ink-muted);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l.146.146A2 2 0 0116.138 21H7.862a2 2 0 01-1.544-3.271l.146-.146z"/></svg>
-        Yapay Çiçekler
-      </a>
-    </div>
-
-    <div class="menu-item">
-      <a href="#dogal" onclick="closeMobileMenu()" class="menu-link">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:var(--emerald);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-        Doğal Çiçekler
-      </a>
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="#firsatlar" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/7li-gul.jpeg" alt="Canlı Gül Buketleri" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">CANLI GÜL BUKETLERİ</span>
+          </div>
+        </a>
+        <a href="#nisan" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/nisan-kirmizi.jpeg" alt="Nişan Buketleri" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">NİŞAN BUKETLERİ</span>
+          </div>
+        </a>
+        <a href="#buket" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/buket.jpeg" alt="Buket Çiçekler" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">BUKET ÇİÇEKLER</span>
+          </div>
+        </a>
+        <a href="#saksi" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/saksi.jpeg" alt="Saksı Çiçekleri" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">SAKSI ÇİÇEKLERİ</span>
+          </div>
+        </a>
+        <a href="#yapay" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/yapay.jpeg" alt="Yapay Çiçekler" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">YAPAY ÇİÇEKLER</span>
+          </div>
+        </a>
+        <a href="#gelin" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+          <img src="images/gelin.jpeg" alt="Gelin Buketi" class="w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
+            <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">GELİN BUKETİ</span>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div class="menu-item" style="margin-top:1.5rem;">
@@ -559,10 +550,81 @@ img { background: var(--line); }
   </div>
 
   <div class="absolute bottom-8 inset-x-0 flex justify-center">
-    <a href="#firsatlar" class="hero-anim hero-d6 flex flex-col items-center gap-2" style="color:var(--hero-hint);">
+    <a href="#koleksiyon" class="hero-anim hero-d6 flex flex-col items-center gap-2" style="color:var(--hero-hint);">
       <span class="font-body text-[.65rem] tracking-[.18em]">KEŞFET</span>
       <svg class="w-5 h-5 scroll-hint"><use href="#i-down"/></svg>
     </a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     KOLEKSİYON
+     ═══════════════════════════════════════ -->
+<section id="koleksiyon" class="py-20 sm:py-28" style="background-color:var(--surface);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-ink">Koleksiyonumuz</h2>
+      <p class="text-dim font-body text-sm mt-3 max-w-md mx-auto">Her mevsim, her kutlama, her duygu için özenle seçilmiş çiçekler.</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+
+      <a href="#firsatlar" class="catalog-card reveal reveal-d1">
+        <img src="images/7li-gul.jpeg" alt="Canlı Gül Buketleri" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Canlı Gül Buketleri</h3>
+        </div>
+      </a>
+
+      <a href="#nisan" class="catalog-card reveal reveal-d2">
+        <img src="images/nisan-kirmizi.jpeg" alt="Nişan Buketleri" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Nişan Buketleri</h3>
+        </div>
+      </a>
+
+      <a href="#buket" class="catalog-card reveal reveal-d3">
+        <img src="images/buket.jpeg" alt="Buket Çiçekler" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Buket Çiçekler</h3>
+        </div>
+      </a>
+
+      <a href="#saksi" class="catalog-card reveal reveal-d4">
+        <img src="images/saksi.jpeg" alt="Saksı Çiçekleri" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Saksı Çiçekleri</h3>
+        </div>
+      </a>
+
+      <a href="#yapay" class="catalog-card reveal reveal-d5">
+        <img src="images/yapay.jpeg" alt="Yapay Çiçekler" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
+        </div>
+      </a>
+
+      <a href="#gelin" class="catalog-card reveal reveal-d6">
+        <img src="images/gelin.jpeg" alt="Gelin Buketi" loading="lazy">
+        <div class="catalog-overlay">
+          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
+          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Gelin Buketi</h3>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
@@ -782,77 +844,6 @@ img { background: var(--line); }
           </div>
         </div>
       </article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     KOLEKSİYON
-     ═══════════════════════════════════════ -->
-<section class="py-20 sm:py-28" style="background-color:var(--surface);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="text-center mb-14 reveal">
-      <div class="ornament">
-        <span class="ornament-line"></span>
-        <span class="ornament-diamond"></span>
-        <span class="ornament-line"></span>
-      </div>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-ink">Koleksiyonumuz</h2>
-      <p class="text-dim font-body text-sm mt-3 max-w-md mx-auto">Her mevsim, her kutlama, her duygu için özenle seçilmiş çiçekler.</p>
-    </div>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d1">
-        <img src="images/saksi.jpeg" alt="Saksı Çiçekleri" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Saksı Çiçekleri</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20%C3%87elenk%20%C3%A7e%C5%9Fitleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d2">
-        <img src="images/celenk.jpeg" alt="Çelenk" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Çelenk</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Buket%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d3">
-        <img src="images/buket.jpeg" alt="Buket Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Buket Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Canl%C4%B1%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d4">
-        <img src="images/canli.jpeg" alt="Canlı Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Canlı Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Yapay%20%C3%87i%C3%A7ekler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d5">
-        <img src="images/yapay.jpeg" alt="Yapay Çiçekler" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Yapay Çiçekler</h3>
-        </div>
-      </a>
-
-      <a href="https://wa.me/905418450095?text=Merhaba%2C%20Gelin%20Buketi%20se%C3%A7enekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="catalog-card reveal reveal-d6">
-        <img src="images/gelin.jpeg" alt="Gelin Buketi" loading="lazy">
-        <div class="catalog-overlay">
-          <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
-          <h3 class="font-display text-xl sm:text-2xl font-semibold" style="color:#fff;">Gelin Buketi</h3>
-        </div>
-      </a>
 
     </div>
   </div>
