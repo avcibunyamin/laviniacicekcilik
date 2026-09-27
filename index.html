@@ -240,7 +240,12 @@ img { background: var(--line); }
   overflow: hidden;
 }
 .campaign-card .card-img img {
+  width:100%; height:100%; object-fit:cover;
   transition: transform .6s var(--ease-out-expo);
+}
+#firsatlar .campaign-card .card-img,
+#canli-guller .campaign-card .card-img {
+  aspect-ratio: 3/4;
 }
 .campaign-card:hover .card-img img {
   transform: scale(1.08);
@@ -272,6 +277,12 @@ img { background: var(--line); }
   background:var(--sale-red); color:#fff;
   padding:.3rem .7rem; border-radius:8px;
   font-size:.7rem; font-weight:700; letter-spacing:.04em;
+}
+.badge-delivery {
+  position:absolute; bottom:.875rem; left:.875rem; z-index:2;
+  background:var(--emerald); color:#fff;
+  padding:.3rem .7rem; border-radius:8px;
+  font-size:.6rem; font-weight:700; letter-spacing:.04em;
 }
 .price-old { text-decoration:line-through; color:var(--ink-muted); font-size:.875rem; }
 .price-new { color:var(--sale-red); font-size:1.375rem; font-weight:700; font-variant-numeric:tabular-nums; }
@@ -447,7 +458,7 @@ img { background: var(--line); }
 
     <div class="menu-item">
       <div class="grid grid-cols-2 gap-2.5">
-        <a href="#firsatlar" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
+        <a href="#canli-guller" onclick="closeMobileMenu()" class="block rounded-xl overflow-hidden relative" style="aspect-ratio:1/1;">
           <img src="images/7li-gul.jpeg" alt="Canlı Gül Buketleri" class="w-full h-full object-cover">
           <div class="absolute inset-0 flex items-end p-2" style="background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);">
             <span class="font-body text-[.65rem] font-semibold tracking-wide" style="color:#fff;">CANLI GÜL BUKETLERİ</span>
@@ -584,7 +595,7 @@ img { background: var(--line); }
 
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
 
-      <a href="#firsatlar" class="catalog-card reveal reveal-d1">
+      <a href="#canli-guller" class="catalog-card reveal reveal-d1">
         <img src="images/7li-gul.jpeg" alt="Canlı Gül Buketleri" loading="lazy">
         <div class="catalog-overlay">
           <span class="font-body text-[.65rem] tracking-[.12em] mb-1" style="color:var(--gold);">KOLEKSİYON</span>
@@ -643,7 +654,7 @@ img { background: var(--line); }
 <section id="firsatlar" class="py-20 sm:py-28" style="background:linear-gradient(180deg,var(--cream) 0%,var(--cream-warm) 100%);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-8 reveal">
       <div class="ornament">
         <span class="ornament-line"></span>
         <span class="ornament-diamond"></span>
@@ -655,20 +666,19 @@ img { background: var(--line); }
 
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 
-      <!-- Ürün 1: 7'li Gül -->
       <article class="campaign-card reveal reveal-d1">
         <div class="card-img relative">
           <img src="images/7li-gul.jpeg" alt="7'li Gül Buketi" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
           <h3 class="font-display text-xl sm:text-[1.35rem] font-semibold text-ink mb-1">7'li Gül Buketi</h3>
-          <p class="text-dim font-body text-sm mb-3">7 adet taze gül, şık ambalaj</p>
+          <p class="text-dim font-body text-sm mb-3">7 adet taze canlı gül, şık ambalaj</p>
           <div class="flex items-baseline gap-2.5 mb-5">
-            <span class="price-new">₺1.000</span>
-            <span class="price-old">₺1.300</span>
+            <span class="price-new">₺800</span>
+            <span class="price-old">₺1.000</span>
           </div>
           <div class="flex flex-col gap-2.5">
-            <a href="https://wa.me/905418450095?text=Merhaba%2C%20fiyat%C4%B1%201000%20TL%20olan%20%277%27li%20G%C3%BCl%20Buketi%27%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+            <a href="https://wa.me/905418450095?text=Merhaba%2C%20800%20TL%20olan%207%27li%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
               <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
               WhatsApp'tan Sipariş Ver
             </a>
@@ -680,20 +690,19 @@ img { background: var(--line); }
         </div>
       </article>
 
-      <!-- Ürün 2: 10'lu Gül -->
       <article class="campaign-card reveal reveal-d2">
         <div class="card-img relative">
           <img src="images/10lu-gul.jpeg" alt="10'lu Gül Buketi" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
           <h3 class="font-display text-xl sm:text-[1.35rem] font-semibold text-ink mb-1">10'lu Gül Buketi</h3>
-          <p class="text-dim font-body text-sm mb-3">10 adet taze gül, premium ambalaj</p>
+          <p class="text-dim font-body text-sm mb-3">10 adet taze canlı gül, premium ambalaj</p>
           <div class="flex items-baseline gap-2.5 mb-5">
-            <span class="price-new">₺1.500</span>
-            <span class="price-old">₺1.900</span>
+            <span class="price-new">₺1.100</span>
+            <span class="price-old">₺1.400</span>
           </div>
           <div class="flex flex-col gap-2.5">
-            <a href="https://wa.me/905418450095?text=Merhaba%2C%20fiyat%C4%B1%201500%20TL%20olan%20%2710%27lu%20G%C3%BCl%20Buketi%27%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+            <a href="https://wa.me/905418450095?text=Merhaba%2C%201100%20TL%20olan%2010%27lu%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
               <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
               WhatsApp'tan Sipariş Ver
             </a>
@@ -705,9 +714,10 @@ img { background: var(--line); }
         </div>
       </article>
 
-      <!-- Ürün 3: 41'li Canlı İsteme Gülü -->
       <article class="campaign-card reveal reveal-d3 col-span-2 max-w-sm mx-auto lg:col-span-1 lg:max-w-none">
         <div class="card-img relative">
+          <span class="badge-sale">KAMPANYA</span>
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
           <img src="images/41li-canli-gul.jpeg" alt="41'li Canlı İsteme Gülü" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
@@ -715,10 +725,10 @@ img { background: var(--line); }
           <p class="text-dim font-body text-sm mb-3">41 adet canlı gül + 80'li Madlen Çikolata + Bademli Çikolata Draje Set</p>
           <div class="flex items-baseline gap-2.5 mb-5">
             <span class="price-new">₺5.500</span>
-            <span class="price-old">₺6.500</span>
+            <span class="price-old">₺7.000</span>
           </div>
           <div class="flex flex-col gap-2.5">
-            <a href="https://wa.me/905418450095?text=Merhaba%2C%20fiyat%C4%B1%205500%20TL%20olan%20%2741%27li%20Canl%C4%B1%20%C4%B0steme%20G%C3%BCl%C3%BC%27%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+            <a href="https://wa.me/905418450095?text=Merhaba%2C%205500%20TL%20olan%2041%27li%20Canl%C4%B1%20%C4%B0steme%20G%C3%BCl%C3%BC%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
               <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
               WhatsApp'tan Sipariş Ver
             </a>
@@ -756,6 +766,7 @@ img { background: var(--line); }
       <!-- Nişan 1: 41'li Kırmızı -->
       <article class="campaign-card reveal reveal-d1">
         <div class="card-img relative">
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
           <img src="images/nisan-kirmizi.jpeg" alt="41'li İsteme Gülü Kırmızı" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
@@ -781,6 +792,7 @@ img { background: var(--line); }
       <!-- Nişan 2: 41'li Pembe -->
       <article class="campaign-card reveal reveal-d2">
         <div class="card-img relative">
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
           <img src="images/nisan-pembe.jpeg" alt="41'li İsteme Gülü Pembe" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
@@ -806,6 +818,7 @@ img { background: var(--line); }
       <!-- Nişan 3: 61'li Beyaz -->
       <article class="campaign-card reveal reveal-d3">
         <div class="card-img relative">
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
           <img src="images/nisan-beyaz.jpeg" alt="61'li İsteme Gülü Beyaz" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
@@ -831,6 +844,7 @@ img { background: var(--line); }
       <!-- Nişan 4: 101'li -->
       <article class="campaign-card reveal reveal-d4">
         <div class="card-img relative">
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
           <img src="images/nisan-101.jpeg" alt="101'li Gül İsteme Çiçeği" class="w-full" loading="lazy">
         </div>
         <div class="p-5 sm:p-6">
@@ -850,6 +864,158 @@ img { background: var(--line); }
               Hemen Ara
             </a>
           </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TESLİMAT BANNER
+     ═══════════════════════════════════════ -->
+<section class="relative overflow-hidden" style="background:var(--cream-warm);">
+  <div class="relative h-[220px] sm:h-[280px] lg:h-[340px]">
+    <img src="images/teslimat-banner.jpeg" alt="Ücretsiz teslimat" class="w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0 flex items-center justify-center" style="background:rgba(0,0,0,.35);">
+      <div class="text-center px-4">
+        <p class="font-body text-base sm:text-lg lg:text-xl font-medium tracking-wide mb-2" style="color:rgba(255,255,255,.85);">1.500₺ ve Üzeri Siparişlerde</p>
+        <h2 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold" style="color:#fff; line-height:1.1;">Ücretsiz Teslimat</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CANLI GÜL BUKETLERİ
+     ═══════════════════════════════════════ -->
+<section id="canli-guller" class="py-20 sm:py-28" style="background:linear-gradient(180deg,var(--cream) 0%,var(--cream-warm) 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-8 reveal">
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line"></span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-ink">Canlı Gül Buketleri</h2>
+      <p class="text-dim font-body text-sm mt-3 max-w-md mx-auto">Taptaze canlı güller ile sevdiklerinizi mutlu edin.</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+
+      <article class="campaign-card reveal reveal-d1">
+        <div class="card-img"><img src="images/1li-gul.jpeg" alt="Tekli Gül" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">Tekli Gül</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺200</span> <span class="price-old">₺250</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20200%20TL%20olan%20Tekli%20G%C3%BCl%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d2">
+        <div class="card-img"><img src="images/4lu-gul.jpeg" alt="4'lü Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">4'lü Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺500</span> <span class="price-old">₺650</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20500%20TL%20olan%204%27l%C3%BC%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d3">
+        <div class="card-img"><img src="images/5li-gul.jpeg" alt="5'li Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">5'li Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺600</span> <span class="price-old">₺750</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20600%20TL%20olan%205%27li%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d4">
+        <div class="card-img"><img src="images/6li-gul.jpeg" alt="6'lı Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">6'lı Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺700</span> <span class="price-old">₺900</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20700%20TL%20olan%206%27l%C4%B1%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d5">
+        <div class="card-img"><img src="images/7li-gul.jpeg" alt="7'li Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">7'li Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺800</span> <span class="price-old">₺1.000</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20800%20TL%20olan%207%27li%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d1">
+        <div class="card-img"><img src="images/8li-gul.jpeg" alt="8'li Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">8'li Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺900</span> <span class="price-old">₺1.150</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20900%20TL%20olan%208%27li%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d2">
+        <div class="card-img"><img src="images/9lu-gul.jpeg" alt="9'lu Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">9'lu Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺1.000</span> <span class="price-old">₺1.300</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%201000%20TL%20olan%209%27lu%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d3">
+        <div class="card-img"><img src="images/10lu-gul.jpeg" alt="10'lu Gül Buketi" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">10'lu Gül Buketi</h3>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺1.100</span> <span class="price-old">₺1.400</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%201100%20TL%20olan%2010%27lu%20G%C3%BCl%20Buketi%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
+        </div>
+      </article>
+
+      <article class="campaign-card reveal reveal-d4">
+        <div class="card-img relative">
+          <span class="badge-sale">KAMPANYA</span>
+          <span class="badge-delivery">ÜCRETSİZ TESLİMAT</span>
+          <img src="images/41li-canli-gul.jpeg" alt="41'li Canlı İsteme Gülü" class="w-full" loading="lazy">
+        </div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-1">41'li İsteme Gülü</h3>
+          <p class="text-dim font-body text-xs mb-2">+ 80'li Madlen & Draje Set</p>
+          <div class="mb-3"><span class="price-new" style="font-size:1.125rem;">₺5.500</span> <span class="price-old">₺7.000</span></div>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%205500%20TL%20olan%2041%27li%20Canl%C4%B1%20%C4%B0steme%20G%C3%BCl%C3%BC%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Sipariş Ver
+          </a>
         </div>
       </article>
 
@@ -932,32 +1098,72 @@ img { background: var(--line); }
       <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-ink">Saksı Çiçekleri</h2>
       <p class="text-dim font-body text-sm mt-3 max-w-md mx-auto">Evinize ve ofisinize canlılık katacak saksı çiçekleri. Detaylı bilgi için bize ulaşın.</p>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
       <article class="campaign-card reveal reveal-d1">
-        <div class="card-img"><img src="images/saksi.jpeg" alt="Saksı Çiçeği" class="w-full" loading="lazy"></div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-lg sm:text-xl font-semibold text-ink mb-3">Saksı Çiçeği</h3>
-          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+        <div class="card-img"><img src="images/saksi-gul.jpeg" alt="Saksı Gülü" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Saksı Gülü</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20G%C3%BCl%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
             <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
             Bilgi Al
           </a>
         </div>
       </article>
       <article class="campaign-card reveal reveal-d2">
-        <div class="card-img"><img src="images/saksi2.jpeg" alt="Saksı Çiçeği" class="w-full" loading="lazy"></div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-lg sm:text-xl font-semibold text-ink mb-3">Saksı Çiçeği</h3>
-          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+        <div class="card-img"><img src="images/bariscicegi.jpeg" alt="Barış Çiçeği" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Barış Çiçeği</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Bar%C4%B1%C5%9F%20%C3%87i%C3%A7e%C4%9Fi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
             <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
             Bilgi Al
           </a>
         </div>
       </article>
-      <article class="campaign-card reveal reveal-d3 col-span-2 max-w-sm mx-auto lg:col-span-1 lg:max-w-none">
+      <article class="campaign-card reveal reveal-d3">
+        <div class="card-img"><img src="images/seflera.jpeg" alt="Şeflera" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Şeflera</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20%C5%9Eeflera%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Bilgi Al
+          </a>
+        </div>
+      </article>
+      <article class="campaign-card reveal reveal-d4">
+        <div class="card-img"><img src="images/monstera.jpeg" alt="Monstera & Difenbahya" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Monstera & Difenbahya</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Monstera%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Bilgi Al
+          </a>
+        </div>
+      </article>
+      <article class="campaign-card reveal reveal-d5">
+        <div class="card-img"><img src="images/saksi.jpeg" alt="Saksı Çiçeği" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Saksı Çiçeği</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Bilgi Al
+          </a>
+        </div>
+      </article>
+      <article class="campaign-card reveal reveal-d6">
+        <div class="card-img"><img src="images/saksi2.jpeg" alt="Saksı Çiçeği" class="w-full" loading="lazy"></div>
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Saksı Çiçeği</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
+            <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
+            Bilgi Al
+          </a>
+        </div>
+      </article>
+      <article class="campaign-card reveal reveal-d1">
         <div class="card-img"><img src="images/saksi3.jpeg" alt="Saksı Çiçeği" class="w-full" loading="lazy"></div>
-        <div class="p-5 sm:p-6">
-          <h3 class="font-display text-lg sm:text-xl font-semibold text-ink mb-3">Saksı Çiçeği</h3>
-          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-md btn-block">
+        <div class="p-4">
+          <h3 class="font-display text-base sm:text-lg font-semibold text-ink mb-3">Saksı Çiçeği</h3>
+          <a href="https://wa.me/905418450095?text=Merhaba%2C%20Saks%C4%B1%20%C3%87i%C3%A7ekleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm btn-block">
             <svg class="w-4 h-4" fill="currentColor"><use href="#i-wa"/></svg>
             Bilgi Al
           </a>
