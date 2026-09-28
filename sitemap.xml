@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://antakyacicekcilik.com/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/logo.jpeg</image:loc>
+      <image:title>Lavinia Flower Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/1li-gul.jpeg</image:loc>
+      <image:title>Tekli Kırmızı Gül</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/3lu-gul.jpeg</image:loc>
+      <image:title>3'lü Gül Buketi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/5li-gul.jpeg</image:loc>
+      <image:title>5'li Gül Buketi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/7li-gul.jpeg</image:loc>
+      <image:title>7'li Gül Buketi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/10lu-gul.jpeg</image:loc>
+      <image:title>10'lu Gül Buketi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/41li-gul.jpeg</image:loc>
+      <image:title>41'li İsteme Gülü</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/orkide.jpeg</image:loc>
+      <image:title>Orkide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/antoryum.jpeg</image:loc>
+      <image:title>Antoryum</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://antakyacicekcilik.com/images/nisan-kirmizi.jpeg</image:loc>
+      <image:title>41'li Yapay Nişan Gülü Kırmızı</image:title>
+    </image:image>
   </url>
 </urlset>
